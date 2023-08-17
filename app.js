@@ -19,8 +19,8 @@ const app = express();
 mongoose.connect(DB_URL);
 
 const allowedCors = [
-  'https://anna.nomoredomains.rocks',
-  'http://anna.nomoredomains.rocks',
+  'https://anna.nomoreparties.sbs',
+  'http://anna.nomoreparties.sbs',
   'http://localhost:3000',
 ];
 
