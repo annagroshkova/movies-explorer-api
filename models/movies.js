@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-
-const URL_REGEX = /^https?:\/\/(www\.)?[a-z0-9\-._~:/?#[\]@!$&'()*+,;=]*#?$/;
+const { URL_REGEX } = require('../constants/constants');
 
 const movieSchema = new mongoose.Schema(
   {
