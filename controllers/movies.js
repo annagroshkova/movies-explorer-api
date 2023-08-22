@@ -65,17 +65,17 @@ module.exports.deleteMovie = async (req, res, next) => {
   const { movieId } = req.params;
 
   try {
-    const card = await Movie.findById(movieId);
-    if (!card) {
+    const movie = await Movie.findById(movieId);
+    if (!movie) {
       return next(new AppError('Карточка не найдена', STATUS_NOT_FOUND));
     }
 
-    if (String(card.owner) !== userId) {
+    if (String(movie.owner) !== userId) {
       return next(new AppError('Невозможно удалить чужую карточку', STATUS_FORBIDDEN));
     }
 
     await Movie.findByIdAndDelete(movieId);
-    res.send(card);
+    res.send(movie);
   } catch (err) {
     console.log(err);
     if (err.name === 'CastError') {
